@@ -1,4 +1,5 @@
 
+# Euclidean Algorithm
 
 def gcd(a, b):
 
@@ -8,6 +9,12 @@ def gcd(a, b):
         a = t
 
     return a
+
+
+    # if a == 0:
+    #     return b
+
+    # return gcd(b % a, a)
 
 
 if __name__ == '__main__':
