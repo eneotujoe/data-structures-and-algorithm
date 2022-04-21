@@ -2,10 +2,10 @@
 
 def mars_exploration(s):
 
-    s_list = list('SOS') * len(s)
-    s_pair = zip(s_list, s)
+    sos_message = list('SOS') * len(s)
+    message_pair = zip(sos_message, s)
     counter = 0
-    for i, j in s_pair:
+    for i, j in message_pair:
         if i != j:
             counter +=1
 

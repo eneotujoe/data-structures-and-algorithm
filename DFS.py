@@ -10,20 +10,20 @@ class Graph:
     def addEdge(self, u, v):
         self.graph[u].append(v)
 
-    def DFSUtil(self, v, visited):
+    def visit(self, v, visited):
         visited.add(v)
         print(v)
 
         for n in self.graph[v]:
             if n not in visited:
-                self.DFSUtil(n, visited)
+                self.visit(n, visited)
 
 
-    def DFS(self, v):
+    def dfs(self, v):
 
         visited = set()
 
-        self.DFSUtil(v, visited)
+        self.visit(v, visited)
 
 
 
@@ -35,4 +35,30 @@ if __name__ == '__main__':
     g.addEdge(2, 0)
     g.addEdge(2, 3)
     g.addEdge(3, 3)
-    g.DFS(2)
+    g.dfs(2)
+
+
+
+# marked = [False] * len(arr)
+# def depth_first_search(G, v):
+#     visit(v)
+#     marked[v] = True
+
+#     for u in G.neighbors(v):
+#         if not marked[u]:
+#             depth_first_search(G, u)
+
+# # marked = [False] * len(arr)
+# def dfs_iter(G, v):
+#     stack = [v]
+
+#     while len(stack) > 0:
+#         v = stack.pop()
+#         if not marked[u]:
+#             visit(v)
+#             marked[v] = True
+            
+#             for u in G.neighbors(v):
+#                 if not marked[u]:
+#                     stack.append(u)
+

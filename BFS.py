@@ -9,18 +9,18 @@ class Graph:
 
     def addEdge(self, u, v):
         self.graph[u].append(v)
+        print(self.graph)
 
-    def BFS(self, s):
+    def bfs(self, s):
         visited = [False] * (max(self.graph) + 1)
-        # print(visited)
         queue = []
         queue.append(s)
         visited[s] = True
+        # print(visited)
 
         while queue:
             s = queue.pop(0)
-            print(s)
-
+            # print(s)
             for i in self.graph[s]:
                 if visited[i] == False:
                     queue.append(i)
@@ -36,5 +36,5 @@ if __name__ == '__main__':
     g.addEdge(2, 0)
     g.addEdge(2, 3)
     g.addEdge(3, 3)
-    # print(g.BFS(2))
-    g.BFS(2)
+    # print(g.bfs(2))
+    g.bfs(2)
