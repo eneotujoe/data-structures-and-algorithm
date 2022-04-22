@@ -36,5 +36,5 @@ if __name__ == '__main__':
     g.addEdge(2, 0)
     g.addEdge(2, 3)
     g.addEdge(3, 3)
-    # print(g.bfs(2))
-    g.bfs(2)
+    # print(g)
+    # g.bfs(2)

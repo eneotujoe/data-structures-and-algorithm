@@ -1,25 +1,25 @@
 
-def flood_fill(img, row, col, p):
-    start = img[row][col]
-    queue = [(row, col)]
+def flood_fill(image, sr, sc, newColor):
+    start = image[sr][sc]
+    queue = [(sr, sc)]
     visited = set()
 
     while len(queue) > 0:
-        row, col = queue.pop(0)
-        visited.add((row, col))
-        img[row][col] = p
+        sr, sc = queue.pop(0)
+        visited.add((sr, sc))
+        image[sr][sc] = newColor
 
-        for row, col in neighbors(img, row, col, start):
-            if (row, col) not in visited:
-                queue.append((row, col))
-    return img
+        for sr, sc in neighbors(image, sr, sc, start):
+            if (sr, sc) not in visited:
+                queue.append((sr, sc))
+    return image
 
-def neighbors(img, row, col, start):
-    indices = [(row-1, col), (row+1, col), (row, col-1), (row, col+1)]
-    return [(row, col) for row, col in indices if isValid(img, row, col) and img[row][col]==start]
+def neighbors(image, sr, sc, start):
+    indices = [(sr-1, sc), (sr+1, sc), (sr, sc-1), (sr, sc+1)]
+    return [(sr, sc) for sr, sc in indices if isValid(image, sr, sc) and image[sr][sc]==start]
 
-def isValid(img, row, col):
-    return row >= 0 and col >= 0 and row < len(img) and col < len(img[0])
+def isValid(image, sr, sc):
+    return sr >= 0 and sc >= 0 and sr < len(image) and sc < len(image[0])
 
 if __name__ == '__main__':
    arr = [
