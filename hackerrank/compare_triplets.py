@@ -7,7 +7,7 @@ def compare_triplets(a, b):
         # print(a, b)
         if a > b:
             total_a_point += 1
-        if a < b:
+        elif a < b:
             total_b_point += 1
 
     return total_a_point, total_b_point
