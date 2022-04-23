@@ -1,16 +1,15 @@
 
 def compare_triplets(a, b):
-    total_a_point = 0
-    total_b_point = 0
+    alice = bob = 0
     
-    for a, b in zip(a, b):
+    for x, y in zip(a, b):
         # print(a, b)
-        if a > b:
-            total_a_point += 1
-        elif a < b:
-            total_b_point += 1
+        if x > y:
+            alice += 1
+        elif x < y:
+            bob += 1
 
-    return total_a_point, total_b_point
+    return alice, bob
 
 
 
